@@ -1,0 +1,68 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="wrapper field">
+    <p class="white">user name</p>
+    <%= f.text_field :userName %>
+  </div>
+
+  <div class="wrapper field">
+    <p class="white">E-mail</p>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="wrapper field">
+    <p class="white">Phone Number</p>
+    <%= f.text_field :phoneNumber %>
+  </div>
+  
+  <div class="field">
+    <p class="white">First Name</p>
+    <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <p class="white">Last Name</p>
+    <%= f.text_field :lastName %>
+  </div>
+  <div class="field">
+    <p class="white">Age</p>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <p class="white">Gender</p>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <p class="white">Height</p>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <p class="white">Weight</p>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <p class="white">Blood Type</p>
+    <%= f.text_field :bloodType %>
+  </div>
+  <div class="field">
+    <p class="white">Address</p>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <p class="white">Your unique Subscription Indentifier</p>
+    <%= f.text_field :subscriptionId %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

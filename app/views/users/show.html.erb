@@ -1,0 +1,115 @@
+<!-- < p id="notice"><%= notice %></p> -->
+<h1 style="text-align: center; color:white"class="makeCenter">User initial information</h1>
+<table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th> 
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Blood Type</th>
+    <th>Subscription Code</th>
+    <th>Address</th>
+  </tr>
+  <tr>
+    <td><%= @user.firstName %></td>
+    <td><%= @user.lastName %></td> 
+    <td><%= @user.age %></td>
+    <td><%= @user.gender %></td>
+    <td><%= @user.height %></td>
+    <td><%= @user.weight %></td>
+    <td><%= @user.bloodType %></td>
+    <td><%= @user.subscriptionId %></td>
+    <td><%= @user.address %></td>
+  </tr>
+</table>
+
+
+<!--Angular gauges
+Area chart
+Areaspline chart
+Bar chart
+Box plot series
+Column chart
+Error bar series
+Funnel series
+Heat map series
+Line chart
+Pie chart
+Polar chart
+Range series
+Scatter chart
+Spline chart
+Treemap
+Waterfall series-->
+<h1 style="text-align: center; color:white"class="makeCenter">User's Dashboard</h1>
+<table style="width:100%">
+<div class="parent">
+
+
+<div class="child">
+<%= pie_chart @users.group(:created_at).count%>
+<%= column_chart @users.group(:created_at).count %>
+<%= bar_chart @users.group(:created_at).count %>
+<%= line_chart @users.group(:created_at).count, xtitle: "blood pressure" %>
+<%= pie_chart @users.group(:created_at).count %>
+
+<br>
+<%= button_to 'Edit Your Initial Information', edit_user_path(@user), :method=>'get'%> |
+<%= button_to 'Back to Home Page', users_path, :method=>'get' %>
+</div>
+
+
+</div>
+<!-- 
+<p>
+  <strong>Username:</strong>
+  <%= @user.userName %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstName %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastName %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @user.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @user.weight %>
+</p>
+
+<p>
+  <strong>Bloodtype:</strong>
+  <%= @user.bloodType %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Subscriptionid:</strong>
+  <%= @user.subscriptionId %>
+</p> -->
+

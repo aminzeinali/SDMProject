@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bloodPressure: MyString
+  heartBeat: 1
+  temperature: 1
+  bloodSugar: 1
+  bloodFat: 1
+  moisture: 1
+
+two:
+  bloodPressure: MyString
+  heartBeat: 1
+  temperature: 1
+  bloodSugar: 1
+  bloodFat: 1
+  moisture: 1

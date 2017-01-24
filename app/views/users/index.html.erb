@@ -1,0 +1,109 @@
+
+
+
+
+<head>
+<h2 style="text-align: center; color:white"class="makeCenter">E-Health system</h2>
+<br>
+<h2 style="text-align: center; color:white"class="makeCenter">Real-time Health-Factor Tracking</h2>
+<br>
+</head>
+
+<link rel="stylesheet" href="/assets/flickity.css" media="screen">
+
+</head>
+
+<body>
+
+
+
+<div class="main-gallery">
+
+  <div class="gallery-cell"><%= image_tag("2.jpg", alt: "rss feed") %></div>
+  <div class="gallery-cell"><%= image_tag("4.jpg", alt: "rss feed") %></div>
+  <div class="gallery-cell"><%= image_tag("3.jpg", alt: "rss feed") %></div>
+  <div class="gallery-cell"><%= image_tag("1.jpg", alt: "rss feed") %></div>
+  <div class="gallery-cell"><%= image_tag("6.jpg", alt: "rss feed") %></div>
+  <div class="gallery-cell"><%= image_tag("5.jpg", alt: "rss feed") %></div>
+</div>
+<script src="/assets/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  setTimeout(function() {
+    var flkty = new Flickity( '.main-gallery', {
+      // options
+      cellAlign: 'left',
+      contain: true,
+      wrapAround: true,
+      freeScroll: true
+    });  
+    setInterval(function(){      
+      flkty.next();
+    }, 3000);
+
+  }, 100);
+})
+</script>
+
+</body>
+
+<br><br>
+
+<div style="width: 43%; " class="makeCenter">
+<%= button_to 'SIGN-UP', new_user_path, :method => "get"%>
+<br>
+<%= button_to 'SIGN-IN', @users.find(10), :method => "get"%>
+<br>
+<%= button_to 'NEWS', 'http://edition.cnn.com/health', :method => "get"%>
+<br>
+<%= button_to 'REPORT PROBLEM', new_user_path, :method => "get"%>
+<br>
+<%= button_to 'SEND FEEDBACK', new_user_path, :method => "get"%>
+<br>
+<%= button_to 'NEW E-HEALTH TECHNOLOGIES', new_user_path, :method => "get"%>
+<br>
+<%= button_to 'GO TO GENERIC HEALTH SYSTEM', new_user_path, :method => "get"%>
+<br>  
+</div>
+
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Bloodtype</th>
+      <th>Address</th>
+      <th>Subscriptionid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.userName %></td>
+        <td><%= user.firstName %></td>
+        <td><%= user.lastName %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.height %></td>
+        <td><%= user.weight %></td>
+        <td><%= user.bloodType %></td>
+        <td><%= user.address %></td>
+        <td><%= user.subscriptionId %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ -->
